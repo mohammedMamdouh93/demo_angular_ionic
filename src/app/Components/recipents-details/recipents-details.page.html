@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-icon  name="arrow-back" slot="start" (click)="goBack()"></ion-icon>
+    <ion-title>Recipents Details</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="onEditRecipe()" color="info">
+        <ion-icon name="pencil" slot="icon-only"> </ion-icon
+      ></ion-button>
+      <ion-button (click)="onDeleteRecipe()" color="danger">
+        <ion-icon name="trash" slot="icon-only"> </ion-icon
+      ></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-img [src]="recipent?.imageUrl" />
+    <ion-card-header>
+      <ion-card-title>{{ recipent?.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ recipent?.ingredients.join(', ') }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
